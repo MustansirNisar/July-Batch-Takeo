@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="u1">Username: </label>
+
+        <input type="text" id="u1" placeholder="Enter your username" minlength="8" name="Name">
+
+        <label for="email">Email:</label>
+        <input type="email"  placeholder="enter your email" id="email" name="Email">
+        </div>
+ <br><br>
+        <label for="pass">Password: </label>
+        <input id="pass" type="password">
+       
+        <br><br>
+        <label for="age">Age: </label>
+        <input type="number" id="age" min="18" max="50">
+
+<br><br>
+       
+        <br><br>
+        <fieldset>
+            <legend>Personal Information: </legend>
+           <label for="">Full Name: </label>
+           <input type="text"><br><br>
+           <label for="">Father's Name: </label>
+           <input type="text"> <br><br>
+           <label for="">Address: </label>
+           <input type="text"><br><br>
+            <label for="dt">Enter your DOB: </label>
+        <input id="dt" type="date"><br><br>
+           <label for="">Education Level: </label>
+           <input type="text">
+        </fieldset>
+        <br><br>
+        <label for="">Upload your docs: </label>
+        <input type="file" name="" id="">
+        <label for="">Pick a Color: </label>
+        <input type="color">
+        <br><br>
+
+        <input type="radio" name="Gender" value="Male">Male
+        <input type="radio" name="Gender" id="" value="Female">Female
+        <input type="radio" name="Gender" value="Other">Other
+
+        <br><br>
+        <label for="">Enter you Skills: </label>
+
+        <input type="checkbox" value="CSS" name="" id="">
+        <label for="">HTML</label>
+        <input type="checkbox" name="" id="">
+        <label for="">CSS</label> <input type="checkbox" name="" id="">
+        <label for="">JavaScript</label> <input type="checkbox" name="" id="">
+        <label for="">React</label>
+         <input type="checkbox" name="" id="">
+        <label for="">Python</label>
+
+        <br><br>
+        <label for="">Select your Country: </label>
+        <select name="" id="" >
+            <option value="US">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="In">India</option>
+            <option value="Cn">Canada</option>
+            <option value="Np" selected>Nepal</option>
+
+        </select>
+
+        <br><br>
+        <label for="">Enter your Hobby: </label>
+        <input type="text" id="hob" list="hobbies">
+        <datalist id="hobbies">
+            <option value="Drawing">
+            <option value="Photography">
+            <option value="Painting">
+            <option value="Calligraphy">
+            <option value="Pottery">
+            <option value="Singing">
+        </datalist>
+        <br><br>
+        <label for="">Your Feedback: </label>
+      <textarea name="" id="" rows="20" cols="30" maxlength="30" required></textarea>  
+
+
+
+
+
+
+
+
+
+<br><br>
+         <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+         </div>
+    </form>
+</body>
+</html>
