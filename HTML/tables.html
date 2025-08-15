@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+        table, tr, th, td{
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Student Data</caption>
+       <thead>
+         <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Instructor</th>
+        </tr>
+       </thead>
+       <tbody>
+         <tr>
+            <td>Abishek</td>
+            <td>DBMS</td>
+            <td>MS</td>
+        </tr>
+        <tr>
+            <td>Deepum</td>
+            <td rowspan="2">AI</td>
+            <td>SK</td>
+        </tr>
+        <tr>
+            <td>Navin</td>
+            <td>TS</td>
+        </tr>
+         <tr>
+            <td>Chandan</td>
+            <td>ML</td>
+            <td>GT</td>
+        </tr>
+       </tbody>
+      <tfoot>
+          <tr>
+            <td colspan="3">Total Students: 4</td>
+        </tr>
+      </tfoot>
+    </table>
+</body>
+</html>
