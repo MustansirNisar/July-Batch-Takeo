@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+    <style>
+        div{
+            border: 2px solid black;
+            /* display: inline-block; */
+            width: 60px;
+            height: 60px;
+        }
+        #container{
+            width: 800px;
+            height: 400px;
+            background-color: brown;
+            display: flex;
+            flex-direction: row;
+            /* gap: 10px; */
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap; */
+            /* align-content: center; */
+        }
+        #div1{
+            /* align-self: flex-start; */
+            /* width: 200px; */
+            /* flex-basis: 200px ; */
+            /* flex-shrink: 3; */
+            flex-grow: 2;
+        }
+        #div2{
+            /* flex-grow: 1; */
+            /* flex: 1 1 150px; */
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox</h1>
+    <div id="container">
+        <div id="div1" style="background-color: aqua;">Box1</div>
+        <div id="div2" style="background-color: blueviolet;">Box2</div>
+        <div id="div3" style="background-color: chartreuse;">Box3</div>
+        <div id="div4" style="background-color: violet;">Box4</div>
+         <div id="div3" style="background-color: chartreuse;">Box3</div>
+        <div id="div4" style="background-color: violet;">Box4</div>
+         <div id="div3" style="background-color: chartreuse;">Box3</div>
+        <div id="div4" style="background-color: violet;">Box4</div>
+        
+           <!-- <div id="div1" style="background-color: aqua;">Box1</div>
+        <div id="div2" style="background-color: blueviolet;">Box2</div>
+        <div id="div3" style="background-color: chartreuse;">Box3</div>
+        <div id="div4" style="background-color: violet;">Box4</div>
+           <div id="div1" style="background-color: aqua;">Box1</div>
+        <div id="div2" style="background-color: blueviolet;">Box2</div>
+        <div id="div3" style="background-color: chartreuse;">Box3</div>
+        <div id="div4" style="background-color: violet;">Box4</div>
+           <div id="div1" style="background-color: aqua;">Box1</div>
+        <div id="div2" style="background-color: blueviolet;">Box2</div>
+        <div id="div3" style="background-color: chartreuse;">Box3</div>
+        <div id="div4" style="background-color: violet;">Box4</div> -->
+
+    </div>
+</body>
+</html>
