@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area</title>
+    <style>
+        .container{
+            background-color: blueviolet;
+            width: 70%;
+            height: 600px;
+            margin: 40px;
+            display: grid;
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-areas:"header header header"
+            "main main aside"
+            "section section aside"
+            "footer footer footer" ;
+            gap: 20px;
+        }
+        .container>div{
+            background-color: chocolate;
+            border: 2px solid black;
+            text-align: center;
+            color: white;
+        }
+        #item1{
+            /* grid-area: 1/1/2/4; */
+            grid-area: header;
+        }
+        #item2{
+            /* grid-area: 2/1/3/3; */
+            grid-area: main;
+        }
+        #item3{
+            /* grid-area: 3/1/4/3; */
+            grid-area: section;
+        }
+        #item4{
+            /* grid-area: 2/3/4/4 ; */
+            grid-area: aside;
+        }
+        #item5{
+            /* grid-area: 4/1/5/4; */
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="item1">Header</div>
+        <div id="item2">Main</div>
+        <div id="item3">Section</div>
+        <div id="item4">Aside</div>
+        <div id="item5">Footer</div>
+    </div>
+</body>
+</html>
