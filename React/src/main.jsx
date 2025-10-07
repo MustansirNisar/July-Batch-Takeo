@@ -7,6 +7,5 @@ import storee from './ReduxToolkit/Storee.jsx'
 createRoot(document.getElementById('root')).render(
  <Provider store = {storee}>
     <App />
- </Provider>
-   
+ </Provider>  
 )
