@@ -1,0 +1,438 @@
+
+//Passing Props
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import About from './components/About'
+
+function App() {
+let fName = "Ravin"
+
+  return (
+    <> 
+     <h1>WELCOME</h1>
+     <About firstName = {fName} age = "22" course = "OS"/>
+    
+
+    
+      </>   
+  )
+ }
+
+export default App
+
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import About from './components/About'
+//Arrays and Objects
+function App() {
+let names = ["Pradesh", "Ravin", "Navin", "Abhishek", "Ishwor"]
+let employee = {
+  name: "Ravin",
+  empId: 22,
+  salary: 50000
+}
+let employee2 = {
+  name: "Navin",
+  empId: 23,
+  salary: 40000
+}
+
+  return (
+    <> 
+     <h1>WELCOME</h1>
+     <About details = {employee}/>
+     <About details = {employee2}/>
+    
+
+    
+      </>   
+  )
+ }
+
+export default App
+
+import React from 'react'
+import User from './components/User'
+import MyInfo from './components/MyInfo'
+//children prop
+function App() {
+  return (
+    <div>
+      <MyInfo color = "orange">
+        <h1>My name is Ishwor</h1>
+        <h1>I am learning React</h1>
+      </MyInfo>
+        <br /><br />
+       <MyInfo color= "red">
+        <h1 >My name is Ravin</h1>
+        <h1>I am also learning React</h1>
+      </MyInfo>
+      <br /><br />
+         <MyInfo>
+        <h1 >My name is Ravin</h1>
+        <h1>I am also learning React</h1>
+      </MyInfo>
+    </div>
+  )
+}
+
+export default App
+
+//Toggling
+import React from 'react'
+import { useState } from 'react'
+import Counter from './components/Counter'
+import Test from './components/Test'
+
+function App() {
+let [show, setShow] = useState(true)
+
+  return (
+    <div>
+      <h1>Toggling</h1>
+      <br /><br />
+      {show? <Test/>:null}
+
+    <button onClick={()=>{setShow(!show)}}>Toggle</button>
+    </div>
+  )
+}
+
+export default App
+
+//Conditional Rendering
+import React, { useState } from 'react'
+
+function App() {
+  let[count, setCount] = useState(0)
+  return (
+    <div>
+
+     <button onClick={()=>{setCount(count+1)}}>Counter</button>
+     <h1>Count: {count}</h1>
+     {
+      count==0?<h1>Display 0</h1>
+      :count==1?<h1>Display 1</h1>
+      :count==2?<h1>Display 2</h1>
+      :count==3?<h1>Display 3</h1>
+      :count==4?<h1>Display 4</h1>
+      :count==5?<h1>Display 5</h1>
+      :<h1>Something Else</h1>
+     }
+
+
+    </div>
+  )
+}
+//Getting input field values
+import React, { useState } from 'react'
+
+function App() {
+  let[vall, setVall] = useState("Ishwor")
+  let[pass, setPass] = useState("")
+  return (
+    <div>
+      <h1>Getting Input Field Values</h1>
+      <h1>{vall}</h1>
+      <input type="text" value={vall}  placeholder='Enter Username' onChange={(event)=>{setVall(event.target.value)}}/>
+      <br /><br />
+      <h1>{pass}</h1>
+       <input type="password" value={pass}  placeholder='Enter Username' onChange={(event)=>{setPass(event.target.value)}}/>
+       <br /><br />
+      <button onClick={()=>{setVall(""); setPass("")}}>Clear Value</button>
+    </div>
+  )
+}
+
+export default App
+
+//Controlled inputimport React, { useState } from 'react'
+
+function Skills() {
+    let[skills, setSkills] = useState([])
+
+    let getSkill = (event)=>{
+        // console.log(event.target.value, event.target.checked)
+        if(event.target.checked){
+            setSkills([...skills,event.target.value])
+        }
+        else{
+            setSkills([...skills.filter((item)=>item!=event.target.value)])
+        }
+    }
+  return (
+    <div>
+      <label htmlFor='python'>Python</label>
+      <input type="checkbox" id='python' value="Python" onChange={getSkill}/>
+        <br /><br />
+      <label htmlFor='Js'>JavaScript</label>
+      <input type="checkbox" id='Js' value="Js" onChange={getSkill}/>
+<br /><br />
+      <label htmlFor='C++'>C++</label>
+      <input type="checkbox" id='C++' value="C++" onChange={getSkill}/>
+<br /><br />
+      <label htmlFor='Rust'>Rust</label>
+      <input type="checkbox" id='Rust' value="Rust" onChange={getSkill}/>
+        <br /><br />
+        <h1>{skills.toString()}</h1>
+
+    </div>
+  )
+}
+
+export default Skills
+
+
+//Rendering Lists
+import React, { useState } from 'react'
+import Skills from './components/Skills'
+
+function App() {
+let userInfo = [
+
+  ["Name", "Id", "email"],
+  {
+    name: "Abhishek",
+    id: 1,
+    email: "Ab@test.com"
+  },
+  {
+    name: "Ankur",
+    id: 2,
+    email: "Ankur@test.com"
+  },
+  {
+    name: "Chandan",
+    id: 3,
+    email: "Ch@test.com"
+  },
+  {
+    name: "Deepum",
+    id: 4,
+    email: "Dp@test.com"
+  }
+]
+
+  return (
+    <div>
+     <table border={1}>
+      <caption>User Data</caption>
+      <thead>
+        <tr>
+          <th>{userInfo[0][0]}</th>
+          <th>{userInfo[0][1]}</th>
+          <th>{userInfo[0][2]}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          userInfo.slice(1).map((item)=>(
+            <tr key={item.id} >
+              <td>{item.name}</td>
+              <td>{item.id}</td>
+              <td>{item.email}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+     </table>
+
+    </div>
+  )
+}
+//component lifecycle
+import React, { useEffect, useState } from 'react'
+import Skills from './components/Skills'
+import ReUse from './components/ReUse'
+import Effect from './components/Effect'
+
+function App() {
+  let[counter, setCounter] = useState(0)
+  let[data, setData] = useState(0)
+  let[disp, setDisp] = useState(true)
+//   useEffect(()=>{
+//   testing();
+//   }, [counter, data])
+
+// function testing(){
+//   console.log("I have been Called")
+// }
+
+
+  return (
+    <div>
+      {
+        disp? <Effect count={counter} data = {data}/>:null
+      }
+
+
+   <button onClick={()=>setCounter(counter+1)}>Counter: {counter}</button>
+    <br /><br />
+    <button onClick={()=>setData(data+1)}>Data: {data}</button>
+
+  <br /><br />
+  <button onClick={()=>setDisp(!disp)}>Toggle</button>
+    </div>
+  )
+}
+
+export default App
+
+
+
+//Uncontrolled componentsimport React, { useRef } from 'react'
+
+function App() {
+  const userRef = useRef();
+  const passRef = useRef();
+  const handleForm = (event)=>{
+    event.preventDefault()
+    // console.log(event)
+    let user = document.querySelector("#user").value
+    console.log("User: ", user)
+    let password = document.querySelector("#pass").value
+    console.log("Password: ", password)
+  }
+
+  const handleRef = (event)=>{
+    event.preventDefault();
+    // console.log("Ref Hook: ", event)
+    let user = userRef.current.value
+    let pass = passRef.current.value
+    console.log("User: " + user + "\n Password: " + pass)
+  }
+  return (
+    <div>
+      <form onSubmit={handleForm}>
+        <input type="text" id='user' placeholder='enter username' />
+      <br /><br />
+      <input type="password" id='pass' placeholder='enter password' />
+      <br /><br />
+      <button>Submit</button>
+      </form>
+
+      {/* Using useRef */}
+      <form onSubmit={handleRef}>
+        <input type="text" ref={userRef} placeholder='enter username' />
+      <br /><br />
+      <input type="password" ref={passRef} placeholder='enter password' />
+      <br /><br />
+      <button>Submit</button>
+      </form>
+    </div>
+  )
+}
+
+export default App
+
+//Context API
+import React, { useState } from 'react'
+import University from './components/University'
+import { courseContext } from './components/DataContext'
+function App() {
+  let[course, setCourse] = useState("")
+  return (
+    <div style={{backgroundColor: "orange", border:"2px solid black", padding:"10px", textAlign:"center"}}>
+      <courseContext.Provider value= {course}>
+        <select value={course} onChange={(event)=>setCourse(event.target.value)}>
+          <option value="">Select a Course</option>
+          <option value="DBMS">DBMS</option>
+          <option value="Operating System"> Operating System</option>
+          <option value="Software Engineering">Software Engineering</option>
+          <option value="Cloud Computing"> Cloud Computing</option>
+        </select>
+        <button onClick={()=>setCourse("")}>Clear</button>
+           <h1>Context API</h1>
+      <University/>
+
+      </courseContext.Provider>
+  )}
+  export default App
+      //useReducer
+      import React, { useReducer } from 'react'
+const inpData = {
+  name: '',
+  password: '',
+  email: '',
+  city: '',
+  country:''
+}
+let reducer = (data, action)=>{
+  // console.log(action)
+  return {...data, [action.type]: action.val}
+
+}
+function App() {
+  let [state, dispatch] =  useReducer(reducer, inpData)
+console.log(state)
+  return (
+    <div>
+      <h1>Reducer Hook</h1>
+      <input type="text" onChange={(event)=>dispatch({val: event.target.value, type: 'name'})} placeholder='enter name' /> <br /><br />
+      <input type="text" onChange={(event)=>dispatch({val: event.target.value, type: 'password'})} placeholder='enter password' /><br /><br />
+      <input type="text" onChange={(event)=>dispatch({val: event.target.value, type: 'email'})} placeholder='enter email'/><br /><br />
+      <input type="text" onChange={(event)=>dispatch({val: event.target.value, type: 'city'})} placeholder='enter city'/><br /><br />
+      <input type="text" onChange={(event)=>dispatch({val: event.target.value, type: 'country'})} placeholder='enter country'/>
+
+        <br /><br />
+        <ul>
+          <li>Name: {state.name}</li>
+          <li>Password: {state.password}</li>
+          <li>Email: {state.email}</li>
+          <li>City: {state.city}</li>
+          <li>Country: {state.country}</li>
+        </ul>
+    </div>
+  )
+}
+
+export default App
+//lazy loading
+import React, { Suspense, useState } from 'react'
+import { lazy } from 'react'
+// import Customers from './components/Customers'
+let Custom = lazy(()=>import('./components/Customers'))
+
+function App() {
+  let[load, setLoad] = useState(false)
+  return (
+    <div>
+
+      {
+        load? <Suspense fallback = {<h3>loading....</h3>}> <Custom/>
+        </Suspense>:null
+      }
+
+      {/* {
+        load?<Customers/>:null
+      } */}
+
+      <button onClick={()=>setLoad(true)}>Load Customers</button>
+    </div>
+  )
+}
+
+export default App
+//legacy redux
+import React from 'react'
+import Counterrr from './components/Counterrr'
+import { useDispatch, useSelector } from 'react-redux'
+import { bColor } from './ReduxStore/Action'
+
+function App() {
+  const bgColor = useSelector((state=>state.color.backgroundColor))
+  const dispatch = useDispatch()
+  return (
+    <div style={{height: "100vh",backgroundColor: bgColor}}>
+      <Counterrr/>
+      <br /><br />
+      <button onClick={()=>dispatch(bColor("blue"))}>Blue</button>
+      <button onClick={()=>dispatch(bColor("violet"))}>Violet</button>
+    </div>
+  )
+}
+
+export default App
