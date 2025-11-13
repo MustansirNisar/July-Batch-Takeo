@@ -20,6 +20,7 @@
 // console.log(fName.concat(" ",greet))
 // console.log(greet.replace("session", "Bootcamp"))
 
+//Template Literals
 let fName = "Pradesh"
 // console.log("My name is :", fName)
 // console.log(`My name is: ${fName}`)
@@ -30,4 +31,5 @@ console.log(`this is
     poem that
     I am not going 
     to recite`)
+
 
