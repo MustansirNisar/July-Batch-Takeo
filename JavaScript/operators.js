@@ -1,6 +1,6 @@
 let a = 10;
 let b = 3;
-
+//Arithmetic Operators
 // console.log(a + b)
 // console.log(a - b)
 // console.log(a * b)
@@ -20,6 +20,7 @@ let b = 3;
 // console.log(x++); 
 // console.log(--x);
 // console.log(x)
+
 
 
 
