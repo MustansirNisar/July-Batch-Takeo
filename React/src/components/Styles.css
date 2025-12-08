@@ -1,0 +1,14 @@
+/* #heading{
+    color: blueviolet;
+    background-color: brown;
+    border: 2px solid black;
+} */
+.head{
+    color: brown;
+    background-color: wheat;
+}
+#list{
+    color: blue;
+    font-size: 35px;
+
+}
